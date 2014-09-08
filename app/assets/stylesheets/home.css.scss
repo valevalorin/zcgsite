@@ -1,0 +1,164 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.newsBlock
+{
+	vertical-align: middle;
+	text-align: center;
+	background-color: #333333;
+}
+.mainStory
+{
+	position:relative;
+	display: inline-block;
+	width: 460px;
+	height: 460px;
+	overflow:hidden;
+}
+.mainStoryImageComic
+{
+	width: 100%;
+	overflow: hidden;
+}
+.mainStoryImageCast
+{
+	width: 100%;
+	height: 100%;	
+}
+.subStories
+{
+	position:relative;
+	display: inline-block;
+	width: 476px;
+	height: 476px;
+}
+.subBlock
+{
+	position:absolute;
+	display: block;
+	width: 226px;
+	height: 226px;
+	overflow:hidden;
+}
+.subBlock1
+{
+	left: 8px;
+	top: 16px;
+}
+.subBlock2
+{
+	right: 8px;
+	top: 16px;
+}
+.subBlock3
+{
+	left: 8px;
+	bottom: 0px;
+}
+.subBlock4
+{
+	right: 8px;
+	bottom: 0px;
+}
+.castImage
+{
+	width:100%;
+	height:100%;
+}
+.comicImages
+{
+	width:100%;
+	overflow:hidden;
+}
+.cardCycleContainer
+{
+	display:block;
+	background-color: #9DEBE9;
+	width: 300px;
+	margin-left:25px;
+}
+.cycle-slideshow
+{
+	margin-top: 6px;
+	margin-bottom:6px;
+}
+.mainPreTitle
+{
+	position:absolute;
+	display:block;
+	width: 70%;
+	height: auto;
+	top: 20%;
+	left:15%;
+
+	text-align:left;
+	font-size: 20pt;
+	color:white;
+	font-weight:bold;
+	text-shadow: 2px 2px 3px rgba(50, 50, 50, 1);
+}
+.storyOverlay
+{
+	position:absolute;
+	display:block;
+	top: 100%;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.45);
+	color: white;
+}
+.storyLink
+{
+	display: block;
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+	width: 64px;
+	height: 64px;
+}
+.storyLink32
+{
+	width: 32px;
+	height: 32px;
+}
+.storyPreview
+{
+	display:block;
+	width: 60%;
+	height: 60%;
+	margin-top: 20%;
+	margin-right:auto;
+	margin-left:auto;
+
+	text-align:left;
+}
+.dateStick
+{
+	display: table;
+	position: absolute;
+	width: auto;
+	height: 100%;
+	top: -90%;
+	left: 0px;
+
+	background-color: #9DEBE9;
+	z-index: 2;
+	color: white;
+	vertical-align: bottom;
+}
+.dateStickBlock
+{
+	display:table-cell;
+	padding: 3px;
+	white-space: nowrap;
+	text-align:center;
+	height:100%;
+	font-size:16pt;
+	text-shadow: 2px 2px 3px rgba(50, 50, 50, 1);
+	vertical-align: bottom;
+}
+.subDateStick
+{
+	top: -80%;
+}

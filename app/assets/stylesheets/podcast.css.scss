@@ -1,0 +1,58 @@
+// Place all the styles related to the podcast controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.castTitle
+{
+	color: purple;
+	font-style: bold;
+	margin: 0px;
+}
+audio
+{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:6px;
+}
+.titleBox
+{
+	display:block;
+	width:900px;
+	height:auto;
+	margin-left:50px;
+	border-bottom: 1px solid purple;
+	text-align:center;
+	vertical-align:center;
+}
+.castListHeader
+{
+	display:block;
+	background-color:purple;
+	border-radius: 2px;
+	color:white;
+	margin-top: 2px;
+	text-align:center;
+	-webkit-box-shadow: inset 0px -5px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    inset 0px -5px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         inset 0px -5px 5px 0px rgba(50, 50, 50, 0.75);
+}
+.castList
+{
+	font-size: 16pt;
+}
+.castItem
+{
+	text-align:center;
+}
+.castListTitle
+{
+	display:inline-block;
+	text-align:left;
+	width: 470px;
+}
+.castListDate
+{
+	display:inline-block;
+	text-align:right;
+	width: 470px;
+}

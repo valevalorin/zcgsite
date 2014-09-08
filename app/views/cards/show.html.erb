@@ -1,0 +1,6 @@
+<div class="titleBox">
+	<h1 class="cardTitle"><%= @card.title %></h1>
+</div>
+<%= image_tag(@card.image, class: 'cardImage') %>
+<p><%= @card.link %></p>
+<%= link_to 'Delete', @card, :method => :delete %>

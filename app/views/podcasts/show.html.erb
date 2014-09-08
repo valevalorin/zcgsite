@@ -1,0 +1,6 @@
+<div class="titleBox">
+	<h1 class="castTitle"><%= @cast.title %></h1>
+</div>
+<%= audio_tag(@cast.audio, controls: true) %>
+<p><%= @cast.desc %></p>
+<%= link_to 'Delete', @cast, :method => :delete %>

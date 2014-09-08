@@ -1,0 +1,78 @@
+<h1>The Latest</h1>
+<div class="newsBlock">
+	<div class="mainStory newsStory">
+		<% if defined? @mainStory.image %>
+			<%= image_tag(@mainStory.image, class: "mainStoryImageComic") %>
+		<% else %>
+			<%= image_tag("castImage.jpg", class: "mainStoryImageCast") %>
+		<% end %>
+		<div class="dateStick">
+			<div class="dateStickBlock">
+				<%= @mainStory.created_at.strftime("%b") %><br/>
+				<%= @mainStory.created_at.strftime("%d") %>
+			</div>
+		</div>
+		<div class="preTitle mainPreTitle">
+			<%= @mainStory.title %>
+		</div>
+		<div id="storyOverlay" class="storyOverlay">		
+			<div class="storyPreview">
+				<h2>
+					<%= @mainStory.title %>
+				</h2>
+				<% if defined?(@mainStory.desc) %>
+					<%= @mainStory.desc %>				
+				<% else %>
+					<%= @mainStory.text %>
+				<% end %>
+			</div>
+			<%= link_to(image_tag("whiteforward.png", class: "storyLink"), @mainStory) %>
+		</div>
+		
+	</div><div class="subStories">
+		<div class="subBlock subBlock1 newsStory">
+			<%= image_tag("castImage.jpg", class: "castImage") %>
+			<div class="dateStick subDateStick">
+				<div class="dateStickBlock sdsb">
+					<%= @currentCasts[0].created_at.strftime("%b") %><br/>
+					<%= @currentCasts[0].created_at.strftime("%d") %>
+				</div>
+			</div>
+			<div class="preTitle mainPreTitle">
+				<%= @currentCasts[0].title %>
+			</div>
+			<div id="storyOverlay" class="storyOverlay">		
+				<div class="storyPreview">
+					<h2>
+						<%= @currentCasts[0].title %>
+					</h2>
+					<%= @currentCasts[0].desc %>				
+				</div>
+				<%= link_to(image_tag("whiteforward32.png", class: "storyLink storyLink32"), @currentCasts[0]) %>
+			</div>
+		</div>
+		<div class="subBlock subBlock2">
+			<%= link_to(image_tag("castImage.jpg", class: "castImage"), @currentCasts[1]) %>
+		</div>
+		<div class="subBlock subBlock3">
+			<%= link_to(image_tag(@currentComics[0].image, class: "comicImages"), @currentComics[0]) %>
+		</div>
+		<div class="subBlock subBlock4">
+			<%= link_to(image_tag(@currentComics[1].image, class: "comicImages"), @currentComics[1]) %>
+		</div>							
+	</div>
+	<br/><br/>
+</div>
+<br>
+<br>
+<h1>Hot Stock</h1>
+<div class="cardCycleContainer">
+	<div class="cycle-slideshow" data-cycle-fx="shuffle" data-cycle-timeout="3000" data-cycle-pause-on-hover="true" data-cycle-slides="> div">
+		<% @cards.each do |card| %>
+			<div class="cycleBlock">
+				<%= link_to(image_tag(card.image, class: "homeCardImage"), card.link) %>
+			</div>
+		<% end %>
+	</div>
+</div>
+

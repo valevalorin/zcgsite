@@ -1,0 +1,9 @@
+<h1 class="castListHeader">Podcasts</h1>
+<ul class="castList">
+	<% @podcasts.each do |cast| %>
+		<li class="castItem">
+			<div class="castListTitle"><%= link_to(cast.title, cast) %></div>
+			<div class="castListDate"><%= link_to(cast.created_at.strftime("%B %-d, %Y"), cast) %></div>
+		</li>
+	<% end %>
+</ul>

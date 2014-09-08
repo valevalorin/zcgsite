@@ -1,0 +1,9 @@
+<h1 class="articleListHeader">articles</h1>
+<ul class="articleList">
+  <% @articles.each do |article| %>
+    <li class="articleItem">
+      <div class="articleListTitle"><%= link_to(article.title, article) %></div>
+      <div class="articleListDate"><%= link_to(article.created_at.strftime("%B %-d, %Y"), article) %></div>
+    </li>
+  <% end %>
+</ul>

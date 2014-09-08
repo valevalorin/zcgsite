@@ -1,0 +1,6 @@
+<div class="titleBox">
+	<h1 class="comicTitle"><%= @comic.title %></h1>
+</div>
+<%= image_tag(@comic.image, class: 'comicImage') %>
+<p><%= @comic.desc %></p>
+<%= link_to 'Delete', @comic, :method => :delete %>

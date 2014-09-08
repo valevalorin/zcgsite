@@ -1,0 +1,9 @@
+<h1 class="comicListHeader">Comics</h1>
+<ul class="comicList">
+	<% @comics.each do |comic| %>
+		<li class="comicItem">
+			<div class="comicListTitle"><%= link_to(comic.title, comic) %></div>
+			<div class="comicListDate"><%= link_to(comic.created_at.strftime("%B %-d, %Y"), comic) %></div>
+		</li>
+	<% end %>
+</ul>

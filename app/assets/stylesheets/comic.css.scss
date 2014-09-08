@@ -1,0 +1,61 @@
+// Place all the styles related to the comic controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.comiTitle
+{
+	color: purple;
+	font-style: bold;
+	margin: 0px;
+}
+.comicImage
+{
+	display:block;
+	width:auto;
+	height:auto;
+	max-width: 950px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:6px;
+}
+.titleBox
+{
+	display:block;
+	width:900px;
+	height:auto;
+	margin-left:50px;
+	border-bottom: 1px solid purple;
+	text-align:center;
+	vertical-align:center;
+}
+.comicListHeader
+{
+	display:block;
+	background-color:purple;
+	border-radius: 2px;
+	color:white;
+	margin-top: 2px;
+	text-align:center;
+	-webkit-box-shadow: inset 0px -5px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    inset 0px -5px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         inset 0px -5px 5px 0px rgba(50, 50, 50, 0.75);
+}
+.comicList
+{
+	font-size: 16pt;
+}
+.comicItem
+{
+	text-align:center;
+}
+.comicListTitle
+{
+	display:inline-block;
+	text-align:left;
+	width: 470px;
+}
+.comicListDate
+{
+	display:inline-block;
+	text-align:right;
+	width: 470px;
+}
