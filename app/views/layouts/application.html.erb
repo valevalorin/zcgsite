@@ -13,10 +13,18 @@
 	<div class="logobox"><img src="/assets/zcglogo.png"></div>
 <div class="content">
 	<div id="navBar" class="navBar">
-		<div class="navButton navHome">Home</div>
-		<div class="navButton navNews">News</div>
-		<div class="navButton navCasts">Podcasts</div>
-		<div class="navButton navComics">Comics</div>
+		<%= link_to(root_path) do %>
+		  <div class="navButton navHome">Home</div>
+		<% end %>
+		<%= link_to(index_articles_path) do %>
+		  <div class="navButton navNews">News</div>
+		<% end %>
+		<%= link_to(index_podcasts_path) do %>
+		  <div class="navButton navCasts">Podcasts</div>
+		<% end %>
+		<%= link_to(index_comics_path) do %>
+		  <div class="navButton navComics">Comics</div>
+		<% end %>	
 	</div>
 	<%= yield %>
 </div>

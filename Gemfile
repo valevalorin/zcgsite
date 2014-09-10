@@ -41,4 +41,7 @@ gem 'spring',        group: :development
 #More jquery libraries
 gem 'jquery-ui-rails'
 
+#Windows tz fix
+gem 'tzinfo-data'
+
 
