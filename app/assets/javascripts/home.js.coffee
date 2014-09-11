@@ -2,10 +2,29 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 //= require jquery.autoellipsis-1.0.10.min
+//= require jquery.color-2.1.2.min
 
 $(document).ready ->
   $(".cardCycleContainer").css "background-color", "red"
   $("#storyPreview").ellipsis()
+  $(".navButton").hover (->
+    console.log "fired"
+    $(this).animate
+      backgroundColor: "#9DEBE9"
+      color: "#FFFFFF"
+    ,
+      200
+
+    return
+  ), ->
+    console.log "fired"
+    $(this).animate
+      backgroundColor: "#FFFFFF"
+      color: "#444444"
+    ,
+      200
+
+    return
   $(".newsStory").hover (->
     $(this).find("#storyOverlay").stop().animate
       top: "0%"
@@ -64,7 +83,6 @@ $(document).ready ->
     return
 
   return
-
 
 
 

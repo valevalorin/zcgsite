@@ -14,17 +14,13 @@
 <div class="content">
 	<div id="navBar" class="navBar">
 		<%= link_to(root_path) do %>
-		  <div class="navButton navHome">Home</div>
-		<% end %>
-		<%= link_to(index_articles_path) do %>
-		  <div class="navButton navNews">News</div>
-		<% end %>
-		<%= link_to(index_podcasts_path) do %>
-		  <div class="navButton navCasts">Podcasts</div>
-		<% end %>
-		<%= link_to(index_comics_path) do %>
-		  <div class="navButton navComics">Comics</div>
-		<% end %>	
+		  <span class="navButton navHome">HOME</span><% end %>
+		<%= link_to(articles_path) do %>
+		  <span class="navButton navNews">NEWS</span><% end %>
+		<%= link_to(podcasts_path) do %>
+		  <span class="navButton navCasts">PODCASTS</span><% end %>
+		<%= link_to(comics_path) do %>
+		  <span class="navButton navComics">COMICS</span><% end %>	
 	</div>
 	<%= yield %>
 </div>
