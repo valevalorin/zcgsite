@@ -5,7 +5,6 @@
 //= require jquery.color-2.1.2.min
 
 $(document).ready ->
-  $(".cardCycleContainer").css "background-color", "red"
   $("#storyPreview").ellipsis()
   $(".navButton").hover (->
     console.log "fired"
