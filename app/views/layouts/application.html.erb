@@ -10,21 +10,23 @@
 
 </head>
 <body>
-	<div class="logobox"><img src="/assets/zcglogo.png"></div>
-<div class="content">
-	<div id="navBar" class="navBar">
-		<%= link_to(root_path) do %>
-		  <span class="navButton navHome">HOME</span><% end %>
-		<%= link_to(articles_path) do %>
-		  <span class="navButton navNews">NEWS</span><% end %>
-		<%= link_to(podcasts_path) do %>
-		  <span class="navButton navCasts">PODCASTS</span><% end %>
-		<%= link_to(comics_path) do %>
-		  <span class="navButton navComics">COMICS</span><% end %>	
+	<div class="logobox"><img class="logo" src="/assets/zcglogo.png"></div>
+	<div class="main">
+		<div class="garruk sideBlock"><img class="sideBlockImage" src="/assets/garruk.png"></div>
+		<div class="content">
+			<div id="navBar" class="navBar">
+				<%= link_to(root_path) do %>
+				  <span class="navButton navHome">HOME</span><% end %>
+				<%= link_to(articles_path) do %>
+				  <span class="navButton navNews">NEWS</span><% end %>
+				<%= link_to(podcasts_path) do %>
+				  <span class="navButton navCasts">PODCASTS</span><% end %>
+				<%= link_to(comics_path) do %>
+				  <span class="navButton navComics">COMICS</span><% end %>	
+			</div>
+			<%= yield %>
+		</div>
+		<div class="ajani sideBlock"><img class="sideBlockImage" src="/assets/ajani.png"></div>	
 	</div>
-	<%= yield %>
-</div>
-
-
 </body>
 </html>
