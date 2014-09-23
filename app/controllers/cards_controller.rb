@@ -21,6 +21,17 @@ class CardsController < ApplicationController
 		Card.find(params[:id]).destroy
 	end
 
+	def edit
+		@card = Card.find(params[:id]);
+	end
+
+	def update
+		@card = Card.find(params[:id])
+		if @card
+			@card.update(card_params)
+		end
+	end
+
 	private
 	  def card_params
 	    params.require(:card).permit(:title, :image, :link)

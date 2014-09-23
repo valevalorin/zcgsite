@@ -25,6 +25,17 @@ class ComicsController < ApplicationController
 		Comic.find(params[:id]).destroy
 	end
 
+	def edit
+		@comic = Comic.find(params[:id]);
+	end
+
+	def update
+		@comic = Comic.find(params[:id])
+		if @comic
+			@comic.update(comic_params)
+		end
+	end
+
 	private
 	  def comic_params
 	    params.require(:comic).permit(:title, :image, :desc)

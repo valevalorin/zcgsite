@@ -4,10 +4,9 @@
 //= require jquery.autoellipsis-1.0.10.min
 //= require jquery.color-2.1.2.min
 
-$(document).ready ->
+$(window).bind 'page:change', ->
   $("#storyPreview").ellipsis()
   $(".navButton").hover (->
-    console.log "fired"
     $(this).animate
       backgroundColor: "#9DEBE9"
       color: "#FFFFFF"
@@ -16,7 +15,6 @@ $(document).ready ->
 
     return
   ), ->
-    console.log "fired"
     $(this).animate
       backgroundColor: "#FFFFFF"
       color: "#444444"

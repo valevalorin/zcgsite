@@ -24,6 +24,17 @@ class PodcastsController < ApplicationController
 		Podcast.find(params[:id]).destroy
 	end
 
+	def edit
+		@podcast = Podcast.find(params[:id]);
+	end
+
+	def update
+		@cast = Podcast.find(params[:id])
+		if @cast
+			@cast.update(cast_params)
+		end
+	end
+
 	private
 	  def cast_params
 	    params.require(:podcast).permit(:title, :audio, :desc)
