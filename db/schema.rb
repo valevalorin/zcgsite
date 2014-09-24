@@ -11,37 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826212011) do
+ActiveRecord::Schema.define(version: 20140924165129) do
 
   create_table "articles", force: true do |t|
+    t.integer  "author_id"
     t.string   "title"
-    t.text     "text"
+    t.text     "html"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "cards", force: true do |t|
-    t.string   "title"
+  create_table "authors", force: true do |t|
+    t.string   "name"
     t.string   "image"
-    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "comics", force: true do |t|
-    t.string   "title"
-    t.string   "image"
-    t.string   "desc"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "event_days", force: true do |t|
+    t.date   "date"
+    t.string "icon"
   end
 
-  create_table "podcasts", force: true do |t|
-    t.string   "title"
-    t.string   "audio"
-    t.string   "desc"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "events", force: true do |t|
+    t.integer "event_day_id"
+    t.string  "title"
+    t.time    "time"
+    t.string  "icon"
   end
 
   create_table "testmodels", force: true do |t|
