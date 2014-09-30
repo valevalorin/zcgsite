@@ -1,88 +1,53 @@
 <div class="newsBlock">
 	<div class="vspacertop"></div>
 	<div class="subStories">
-		<div class="subBlock subBlock1 newsStory">
-			<%= image_tag("castImage.png", class: "castImage") %>
-			<div class="dateStick subDateStick">
-				<div class="dateStickBlock sdsb">
-					<%= @currentCasts[0].created_at.strftime("%b") %><br/>
-					<%= @currentCasts[0].created_at.strftime("%d") %>
+		<div class="subBlock subBlock1 newsStory" >
+			<%= image_tag("facebook.png", class: "staticImage") %>
+		</div>
+		<div class="subBlock subBlock2 newsStory cycle-slideshow" data-cycle-fx="fade" data-cycle-timeout="3000" data-cycle-pause-on-hover="true" data-cycle-slides="> div">
+			<% @events.each do |event| %>
+				<%= link_to(image_tag(event.icon, class: "eventImage"), "https://www.facebook.com/pages/Zielinskis-the-Card-Game/102946859760100") %>
+				<div class="dateStick subDateStick">
+					<div class="dateStickBlock sdsb">
+						<%= event.created_at.strftime("%b") %><br/>
+						<%= event.created_at.strftime("%d") %>
+					</div>
+				</div>
+				<div class="preTitle mainPreTitle">
+					<%= event.title %>
+				</div>
+				<div id="storyOverlay" class="storyOverlay">		
+					<div class="storyPreview">
+						<h2>
+							<%= event.title %>
+						</h2>				
+					</div>
+					<%= link_to(image_tag("whiteforward32.png", class: "storyLink storyLink32"), event) %>
+				</div>
+			<% end %>			
+		</div>
+	</div><div class="spacer"></div><div class="mainStory newsStory cycle-slideshow" data-cycle-fx="fade" data-cycle-timeout="3000" data-cycle-pause-on-hover="true" data-cycle-slides="> div">
+		<% @articles.each do |article| %>
+			<div class="dateStick">
+				<div class="dateStickBlock">
+					<%= article.created_at.strftime("%b") %><br/>
+					<%= article.created_at.strftime("%d") %>
 				</div>
 			</div>
 			<div class="preTitle mainPreTitle">
-				<%= @currentCasts[0].title %>
+				<%= article.title %>
 			</div>
 			<div id="storyOverlay" class="storyOverlay">		
 				<div class="storyPreview">
 					<h2>
-						<%= @currentCasts[0].title %>
+						<%= article.title %>
 					</h2>
-					<%= @currentCasts[0].desc %>				
+					By <% article.author.name %>
 				</div>
-				<%= link_to(image_tag("whiteforward32.png", class: "storyLink storyLink32"), @currentCasts[0]) %>
-			</div>
-		</div>
-		<div class="subBlock subBlock2 newsStory">
-			<%= image_tag(@currentComics[0].image, class: "comicImages") %>
-			<div class="dateStick subDateStick">
-				<div class="dateStickBlock sdsb">
-					<%= @currentComics[0].created_at.strftime("%b") %><br/>
-					<%= @currentComics[0].created_at.strftime("%d") %>
-				</div>
-			</div>
-			<div class="preTitle mainPreTitle">
-				<%= @currentComics[0].title %>
-			</div>
-			<div id="storyOverlay" class="storyOverlay">		
-				<div class="storyPreview">
-					<h2>
-						<%= @currentComics[0].title %>
-					</h2>
-					<%= @currentComics[0].desc %>				
-				</div>
-				<%= link_to(image_tag("whiteforward32.png", class: "storyLink storyLink32"), @currentComics[0]) %>
-			</div>
-		</div>
-	</div><div class="spacer"></div><div class="mainStory newsStory">
-		<% if defined? @mainStory.image %>
-			<%= image_tag(@mainStory.image, class: "mainStoryImageComic") %>
-		<% else %>
-			<%= image_tag("castImage.png", class: "mainStoryImageCast") %>
+				<%= link_to(image_tag("whiteforward.png", class: "storyLink"), @mainStory) %>
+			</div>				
 		<% end %>
-		<div class="dateStick">
-			<div class="dateStickBlock">
-				<%= @mainStory.created_at.strftime("%b") %><br/>
-				<%= @mainStory.created_at.strftime("%d") %>
-			</div>
-		</div>
-		<div class="preTitle mainPreTitle">
-			<%= @mainStory.title %>
-		</div>
-		<div id="storyOverlay" class="storyOverlay">		
-			<div class="storyPreview">
-				<h2>
-					<%= @mainStory.title %>
-				</h2>
-				<% if defined?(@mainStory.desc) %>
-					<%= @mainStory.desc %>				
-				<% else %>
-					<%= @mainStory.text %>
-				<% end %>
-			</div>
-			<%= link_to(image_tag("whiteforward.png", class: "storyLink"), @mainStory) %>
-		</div>	
+		
 	</div><div class="vspacerbottom"></div>						
 </div>
-<!-- <br>
-<br>
-<h1>Hot Stock</h1>
-<div class="cardCycleContainer">
-	<div class="cycle-slideshow" data-cycle-fx="shuffle" data-cycle-timeout="3000" data-cycle-pause-on-hover="true" data-cycle-slides="> div">
-		<% @cards.each do |card| %>
-			<div class="cycleBlock">
-				<%= link_to(image_tag(card.image, class: "homeCardImage"), card.link) %>
-			</div>
-		<% end %>
-	</div>
-</div> -->
 

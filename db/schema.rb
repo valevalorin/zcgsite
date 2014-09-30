@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924165129) do
+ActiveRecord::Schema.define(version: 20140929235040) do
 
   create_table "articles", force: true do |t|
-    t.integer  "author_id"
     t.string   "title"
+    t.integer  "author_id"
     t.text     "html"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,21 +29,19 @@ ActiveRecord::Schema.define(version: 20140924165129) do
   end
 
   create_table "event_days", force: true do |t|
-    t.date   "date"
-    t.string "icon"
+    t.date     "date"
+    t.string   "icon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "events", force: true do |t|
-    t.integer "event_day_id"
-    t.string  "title"
-    t.time    "time"
-    t.string  "icon"
-  end
-
-  create_table "testmodels", force: true do |t|
+    t.string   "title"
+    t.integer  "day_id"
+    t.time     "time"
+    t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
   end
 
 end

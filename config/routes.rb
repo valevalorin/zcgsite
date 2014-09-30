@@ -1,18 +1,8 @@
 Rails.application.routes.draw do
-  resources :cards
-
-  resources :podcasts
-
-  resources :comics
-
   resources :articles
 
   get 'home/index'
-
   resources :articles
-  resources :podcasts
-  resources :comics
-  resources :cards
   
   root 'home#index'
 
