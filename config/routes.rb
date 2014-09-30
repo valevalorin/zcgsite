@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
   resources :articles
+
+  get 'calendar' => 'calendar#index'
   
   root 'home#index'
 
