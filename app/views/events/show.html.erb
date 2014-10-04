@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<p>
+	Title: <%= @event.title %><br>
+
+	Time: <%= @event.time.strftime("%I:%M %p") %> <br>
+</p>
+
+
+
+<%= link_to 'Delete', @event, :method => :delete %> |
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

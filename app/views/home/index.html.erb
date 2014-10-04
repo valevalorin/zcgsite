@@ -1,12 +1,12 @@
 <div class="newsBlock">
 	<div class="vspacertop"></div>
 	<div class="subStories">
-		<div class="subBlock subBlock1 newsStory" >
-			<%= image_tag("facebook.png", class: "staticImage") %>
+		<div class="subBlock subBlock1" >
+			<%= link_to(image_tag("facebook.png", class: "staticImage"), "https://www.facebook.com/pages/Zielinskis-the-Card-Game/102946859760100") %>
 		</div>
 		<div class="subBlock subBlock2 newsStory cycle-slideshow" data-cycle-fx="fade" data-cycle-timeout="3000" data-cycle-pause-on-hover="true" data-cycle-slides="> div">
 			<% @events.each do |event| %>
-				<%= link_to(image_tag(event.icon, class: "eventImage"), "https://www.facebook.com/pages/Zielinskis-the-Card-Game/102946859760100") %>
+				<%= image_tag(event.icon, class: "eventImage") %>
 				<div class="dateStick subDateStick">
 					<div class="dateStickBlock sdsb">
 						<%= event.created_at.strftime("%b") %><br/>

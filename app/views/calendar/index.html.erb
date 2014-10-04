@@ -1,0 +1,46 @@
+<div class="overlay"></div>
+<div class="calendarContainer">
+	<div class="header">
+		<div class="headerMonth">
+			<%= @monthString %>
+		</div>
+	</div>
+	<% index = 0 %>
+	<table class="calendar">
+		<thead class="blueBack"><th>Sunday</th><th>Monday</th><th>Tuesday</th><th class="wednesday">Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></thead>
+		<% (0...5).each do |i| %>
+			<tr class=<%= i%2 == 0 ? "grayBack" : "blueBack" %>>
+				<% (0...7).each do |j| %>
+					<td class="calendarDayBlock" id=<%= "td#{index}" %>>
+						<div class="dayNumberBox"><%= @numerals[index] %></div>
+						<% if @event_days[index] %>
+							<%= image_tag(@event_days[index].icon, class: "eventDayIcon") %>
+						<% end %>
+					</td>
+					<% index = index+1 %>
+				<% end %>
+			</tr>
+		<% end %>
+	</table>
+	<br>
+	<% (0..index).each do |i| %>
+		<% if @event_days[i] %>
+			<div class="<%= "td#{i} popup" %>" id=<%= "pop#{i}" %>>
+				<div class="popupHeader">
+					<%= @event_days[i].date.strftime("%B %e, %Y") %>
+				</div>
+				<div class="events" cellspacing="0" cellpadding="0" border="0">
+					<% @events[i].each do |event| %>
+						<div class="eventItem">
+							<div class="bullet">
+								<%= image_tag(event.icon, class: "eventIcon") %><br>
+								<div class="eventItemTime"><%= event.time.strftime("%I:%M %p")%></div>
+							</div>
+							<div class="eventItemTitle"><%= event.title%></div>
+						</div>
+					<% end %>
+				</div>				
+			</div>
+		<% end %>
+	<% end %>
+</div>

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :articles
+  resources :events
+  resources :event_days
 
   get 'home/index'
-  resources :articles
 
   get 'calendar' => 'calendar#index'
   

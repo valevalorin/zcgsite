@@ -1,3 +1,202 @@
 // Place all the styles related to the calendar controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//========== Calendar Rendering =============//
+.calendarContainer
+{
+	position:relative;
+	margin-top: 8px;
+}
+.header
+{
+	position:relative;
+	width: 924px;
+	height: 200px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:blue;
+	border:3px solid black;
+	border-bottom: 0px;
+	color: white;
+}
+.headerMonth
+{
+	position:absolute;
+	top: 6px;
+	left: 6px;
+    display:block;
+    width: auto;
+	
+	
+	font-size:28pt;
+	text-shadow: 0 0 3px #000;
+}
+.calendar
+{
+	width: 930px;
+	margin-left:auto;
+	margin-right:auto;
+	border: 2px solid black;
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-shadow: 0 0 3px #FFF;
+
+	background: rgba(95,229,232,1);
+	background: -moz-linear-gradient(left, rgba(95,229,232,1) 0%, rgba(143,149,149,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(95,229,232,1)), color-stop(100%, rgba(143,149,149,1)));
+	background: -webkit-linear-gradient(left, rgba(95,229,232,1) 0%, rgba(143,149,149,1) 100%);
+	background: -o-linear-gradient(left, rgba(95,229,232,1) 0%, rgba(143,149,149,1) 100%);
+	background: -ms-linear-gradient(left, rgba(95,229,232,1) 0%, rgba(143,149,149,1) 100%);
+	background: linear-gradient(to right, rgba(95,229,232,1) 0%, rgba(143,149,149,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fe5e8', endColorstr='#8f9595', GradientType=1 );
+
+}
+.blueBack
+{
+	background: transparent;
+}
+.grayBack
+{
+	background-color: #FFF; //#8f9595;
+}
+td
+{
+	position:relative;
+	width: 100px;
+	background:transparent;
+	border: 3px solid black;
+	text-align:center;
+
+	margin: 0;
+	padding: 0;
+}
+tr
+{
+	height: 80px;
+	border: 3px solid black;
+
+	margin: 0;
+	padding: 0;
+}
+th
+{
+	border: 3px solid black;
+	height: 40px;
+
+	margin: 0;
+	padding: 0;
+}
+thead
+{
+	border: 3px solid black;
+	font-size: 14pt;
+
+	margin: 0;
+	padding: 0;
+	height: 40px;
+}
+.wednesday
+{
+	font-size: 14pt;
+}
+.dayNumberBox
+{
+	position:absolute;
+	top: 4px;
+	right: 4px;
+	text-shadow: 0 0 3px #FFF;
+}
+.eventDayIcon
+{
+	display:inline-block;
+	height: 50px;
+	width: 50px;
+}
+//========== End Calendar Rendering =============//
+
+//============Pop Up Rendering =============//
+.overlay
+{
+	display:none;
+	position:fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(143,149,149,0.8);
+	z-index: 2;
+}
+.popup
+{
+	position: fixed;
+	display: none;
+	height:400px;
+	width: 500px;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -250px;
+	background-color:white;
+	z-index: 3;
+}
+.popupHeader
+{
+	display:block;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 14pt;
+	color: white;
+	background-color: #9DEBE9;
+	text-align: center;
+}
+.events
+{
+	overflow-y: auto;
+	font-size: 14pt;
+	width: 480px;
+	margin-left: 10px;
+	text-align:left;
+	border-collapse:collapse;
+	border:none;
+}
+.eventItem
+{
+    margin-top: 8px;
+    width:480px;
+    border:none;
+}
+.bullet
+{
+	display:table-cell;
+	width: 100px;
+	height: 50px;
+	vertical-align:middle;
+	text-align:center;
+	//background-color: rgb(143,149,149);
+}
+.eventIcon
+{
+	display:inline-block;
+	height: 32px;
+	width: 32px;
+}
+.eventItemTime
+{
+	display:block;
+	color: black;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+.eventItemTitle
+{
+	display:table-cell;
+	width: 380px;
+	color: white;
+	background-color: #9DEBE9;
+	height: 50px;
+	padding-left: 4px;
+	padding-right: 4px;
+	vertical-align:middle;
+	border-left:1px solid white;
+}
