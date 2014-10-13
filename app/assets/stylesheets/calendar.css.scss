@@ -113,6 +113,57 @@ thead
 	height: 50px;
 	width: 50px;
 }
+.backBtn
+{
+	display: block;
+	float: left;
+	color: white;
+	font-size: 14pt;
+	background-color: #000;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-left: 10px;
+}
+.nextBtn
+{
+	display: block;
+	float: right;
+	color: white;
+	font-size: 14pt;
+	background-color: #000;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-right: 10px;
+}
+.backArrow
+{
+	display: block;
+	float: left;
+	height: 32px;
+	width: 32px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	margin-left: 10px;
+}
+.nextArrow
+{
+	display: block;
+	float: right;
+	height: 32px;
+	width: 32px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	margin-right: 10px;
+}
+
 //========== End Calendar Rendering =============//
 
 //============Pop Up Rendering =============//

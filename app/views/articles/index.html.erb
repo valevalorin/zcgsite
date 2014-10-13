@@ -1,9 +1,21 @@
-<h1 class="articleListHeader">articles</h1>
-<ul class="articleList">
+<h1 class="articleListHeader">Articles</h1>
   <% @articles.each do |article| %>
-    <li class="articleItem">
-      <div class="articleListTitle"><%= link_to(article.title, article) %></div>
-      <div class="articleListDate"><%= link_to(article.created_at.strftime("%B %-d, %Y"), article) %></div>
-    </li>
+    <div class="articleItem">
+    	<div class="articleHeader">
+	    		<div class="authorBlock">
+	    			<%= image_tag("#{article.author.image}", class: 'authorImage') %><br>
+	    			<div class="authorName"><%= article.author.name %></div>
+	    		</div>
+	    		<div class="titleBlock">
+	    			<div class="articleTitle"><% article.title %></div>&nbsp;-&nbsp;<div class="articleDate"><%= article.created_at.strftime("%e/%m/%y") %></div>
+	    		</div>  		    		
+    	</div><br>
+    	<div class="descBlock">
+    		<div class="articleDesc"><%= article.desc %></div> <%= link_to(image_tag('next.png', class: 'articleBtn'), article)%>
+    	</div>  	
+    </div>
   <% end %>
-</ul>
+<% if @prevMonth %>
+	<%= link_to( image_tag('back.png', class: 'backArrow'), "/articles?offset=#{@prevMonth}") %>
+<% end %>
+<%= link_to( image_tag('next.png', class: 'nextArrow'), "/articles?offset=#{@nextMonth}") %>

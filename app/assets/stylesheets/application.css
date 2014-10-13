@@ -15,7 +15,7 @@
  */
  body
  {
- 	background-color: #424242;
+ 	background-image: url("/assets/texture2.jpg");
  	color: white;
  	font-family: Jura;
  }
@@ -35,7 +35,6 @@
  {
  	display:block;
  	width: 1350px;
- 	background-color: #9DEBE9;
  	height:auto;
  	margin-left:auto;
  	margin-right:auto;
@@ -44,7 +43,7 @@
  {
 	display: block;
 	float: left;
-	height: 498px;
+	height: 510px;
 	width: 200px;
 	margin-top:34px;
 	overflow: hidden;
@@ -62,7 +61,7 @@
  {
  	display:block;
  	float:left;
- 	background-color: white;
+ 	background-color: rgba(0,0,0,0);
  	width:950px;
  	color: black;
  	text-align: center;
@@ -72,6 +71,7 @@
 	display: block;
 	width: 950px;
 	height: 34px;
+	color: white;
  }
  .navButton
  {
@@ -80,7 +80,7 @@
 	width: 237.5px;
 	height: 26px;
 	text-align: center;
-	color:black;
+	color:white;
 	font-weight: bold;
 	padding-top: 8px;
 	color: #444444;

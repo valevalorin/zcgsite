@@ -1,3 +1,118 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//=========== Index ============//
+.articleItem
+{
+	display: block;
+	width: 930px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: 2px solid #9DEBE9;
+}
+.articleHeader
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+.authorBlock
+{
+	display: inline-block;
+	margin-right: 4px;
+}
+.authorImage
+{
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	margin-top: 2px;
+}
+.authorName
+{
+	display: inline-block;
+	margin-bottom: 2px;
+}
+.titleBlock
+{
+	display:inline-block;
+}
+.articleTitle
+{
+	display: inline-block;
+	font-size: 14pt;
+	font-weight: bold;
+}
+.articleDate
+{
+	display: inline-block;
+}
+.descBlock
+{
+	display: table-cell;
+	vertical-align: middle;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+.articleDesc
+{
+	display: inline-block;
+	width: 880px;
+	float: left;
+}
+.articleBtn
+{
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	float: right;	
+}
+
+//=========== Show ============//
+.articleInfoBlock
+{
+	display: block;
+	width: 900px;
+}
+.barBlock
+{
+	display: inline-block;
+	width: 840px;
+	float: left;
+}
+.titleBar
+{
+	display: block;
+	width: 840px;
+	font-size: 16pt;
+	border-bottom: 2px solid #9DEBE9;
+}
+.dateBar
+{
+	display:block;
+}
+.bigAuthorBlock
+{
+	display: table-cell;
+	vertical-align: middle;
+	float: right;
+}
+.bigAuthorImage
+{
+	display: inline-block;
+	height: 48px;
+	width: 48px;
+}
+.bigAuthorName
+{
+	display: inline-block;
+	font-size: 13pt;
+}
+.articleText
+{
+	display: block;
+	width: 840px;
+	margin-left: auto;
+	margin-right: auto;
+}
+

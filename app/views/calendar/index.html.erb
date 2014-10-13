@@ -22,6 +22,10 @@
 			</tr>
 		<% end %>
 	</table>
+	<% if @prevMonth %>
+		<%= link_to( image_tag('back.png', class: 'backArrow'), "/calendar?offset=#{@prevMonth}") %>
+	<% end %>
+	<%= link_to( image_tag('next.png', class: 'nextArrow'), "/calendar?offset=#{@nextMonth}") %>
 	<br>
 	<% (0..index).each do |i| %>
 		<% if @event_days[i] %>

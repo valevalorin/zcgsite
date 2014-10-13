@@ -13,17 +13,17 @@
 <body>
 	<div class="logobox"><img class="logo" src="/assets/zcglogo.png"></div>
 	<div class="main">
-		<div class="garruk sideBlock"><img class="sideBlockImage" src="/assets/garruk.png"></div>
+		<div class="garruk sideBlock"><%= image_tag('garruk.png', class: "sideBlockImage") %></div>
 		<div class="content">
 			<div id="navBar" class="navBar">
 				<%= link_to(root_path) do %>
 				  <span class="navButton navHome">HOME</span><% end %>
-				<%= link_to("http://google.com") do %>
-				  <span class="navButton navNews">NEWS</span><% end %>
-				<%= link_to("http://google.com") do %>
-				  <span class="navButton navCasts">PODCASTS</span><% end %>
-				<%= link_to("http://google.com") do %>
-				  <span class="navButton navComics">COMICS</span><% end %>	
+				<%= link_to("/calendar") do %>
+				  <span class="navButton navEvents">EVENTS</span><% end %>
+				<%= link_to("/articles") do %>
+				  <span class="navButton navArticles">ARTICLES</span><% end %>
+				<%= link_to("http://youtube.com") do %>
+				  <span class="navButton navVideos">VIDEOS</span><% end %>	
 			</div>
 			<%= yield %>
 		</div>
