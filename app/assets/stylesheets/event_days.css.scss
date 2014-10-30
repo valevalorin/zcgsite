@@ -1,3 +1,25 @@
 // Place all the styles related to the event_days controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.divider
+{
+	display:inline-block;
+	width: 600px;
+	border-bottom: 2px solid #9DEBE9;
+}
+.itemListing
+{
+	display: inline-block;
+	width: 600px;
+	border-bottom: 2px solid #9DEBE9;
+}
+.identifier
+{
+	display: inline-block;
+	float: left;
+}
+.actionBlock
+{
+	display: inline-block;
+	float: right;
+}

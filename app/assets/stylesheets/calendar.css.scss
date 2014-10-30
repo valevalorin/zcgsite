@@ -6,7 +6,10 @@
 .calendarContainer
 {
 	position:relative;
-	margin-top: 8px;
+	margin-top: 1px;
+	padding-top: 7px;
+	background-color:white;
+	padding-bottom: 20px;
 }
 .header
 {
@@ -18,18 +21,19 @@
 	background-color:blue;
 	border:3px solid black;
 	border-bottom: 0px;
-	color: white;
+	color: black;
 }
 .headerMonth
 {
-	position:absolute;
+	position: absolute;
 	top: 6px;
 	left: 6px;
-    display:block;
+    display: block;
     width: auto;
 	
 	
-	font-size:28pt;
+	font-size: 28pt;
+	color: white;
 	text-shadow: 0 0 3px #000;
 }
 .calendar
@@ -41,6 +45,7 @@
 	border-collapse: collapse;
 	border-spacing: 0;
 	text-shadow: 0 0 3px #FFF;
+	color:black;
 
 	background: rgba(95,229,232,1);
 	background: -moz-linear-gradient(left, rgba(95,229,232,1) 0%, rgba(143,149,149,1) 100%);
@@ -256,4 +261,11 @@ thead
 	display:inline-block;
 	height: 16px;
 	width: 16px;
+}
+.suedit
+{
+	display:inline-block;
+	height: 16px;
+	width: 16px;
+	float: right;
 }

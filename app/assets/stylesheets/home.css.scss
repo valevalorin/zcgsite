@@ -70,6 +70,20 @@
 	right: 2px;
 	bottom: 0px;
 }
+.noEvents
+{
+	position: absolute;
+	top: 330px;
+	left: 40px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 180px;
+	height: 200px;
+	color: black;
+	font-size: 16pt;
+	z-index: 1;
+}
 .castImage
 {
 	width:100%;
@@ -178,8 +192,52 @@
 	font-size:16pt;
 	text-shadow: 2px 2px 3px rgba(50, 50, 50, 1);
 	vertical-align: bottom;
+	padding-bottom: 8px;
 }
 .subDateStick
 {
 	top: -80%;
+}
+.eventBlock
+{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+}
+.articleBlock
+{
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.adminBlock
+{
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	height: 32px;
+	width: 32px;
+	background-color: white;
+	border: 1px solid #9DEBE9;
+	color:black;
+}
+.adminImage
+{
+	height: 32px;
+	width: 32px;
+}
+.sessionLog
+{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	display: block;
+	height: 400px;
+	width: 400px;
+	color: white;
+	text-align: right;
+	font: arial;
 }

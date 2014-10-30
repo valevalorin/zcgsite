@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Zcgsite</title>
-  <link href='http://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Fascinate' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application'%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
  
@@ -13,7 +13,7 @@
 <body>
 	<div class="logobox"><img class="logo" src="/assets/zcglogo.png"></div>
 	<div class="main">
-		<div class="garruk sideBlock"><%= image_tag('garruk.png', class: "sideBlockImage") %></div>
+		<div class="garruk sideBlock"><%= image_tag('leftImage.png', class: "sideBlockImage") %></div>
 		<div class="content">
 			<div id="navBar" class="navBar">
 				<%= link_to(root_path) do %>
@@ -27,7 +27,7 @@
 			</div>
 			<%= yield %>
 		</div>
-		<div class="ajani sideBlock"><img class="sideBlockImage" src="/assets/ajani.png"></div>	
+		<div class="ajani sideBlock"><%= image_tag('rightImage.png', class: "sideBlockImage") %></div>	
 	</div>
 </body>
 </html>

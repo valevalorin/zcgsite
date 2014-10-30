@@ -31,7 +31,10 @@
 		<% if @event_days[i] %>
 			<div class="<%= "td#{i} popup" %>" id=<%= "pop#{i}" %>>
 				<div class="popupHeader">
-					<%= @event_days[i].date.strftime("%B %e, %Y") %><sup><%= link_to(image_tag("plus.png", class: "suplus"), "#{new_event_path}?day_id=#{@event_days[i].id}") %></sup>
+					<%= @event_days[i].date.strftime("%B %e, %Y") %>
+					<% if session[:logged_in] %>
+						<sup><%= link_to(image_tag("plus.png", class: "suplus"), "#{new_event_path}?day_id=#{@event_days[i].id}") %></sup>
+					<% end %>
 				</div>
 				<div class="events" cellspacing="0" cellpadding="0" border="0">
 					<% @events[i].each do |event| %>
@@ -40,7 +43,12 @@
 								<%= image_tag(event.icon, class: "eventIcon") %><br>
 								<div class="eventItemTime"><%= event.time.strftime("%I:%M %p")%></div>
 							</div>
-							<div class="eventItemTitle"><%= event.title%></div>
+							<div class="eventItemTitle">
+								<%= event.title%>
+								<% if session[:logged_in] %>
+									<%= link_to(image_tag("edit.png", class: "suedit"), "#{edit_event_path(event)}?day_id=#{@event_days[i].id}") %>
+								<% end %>
+							</div>
 						</div>
 					<% end %>
 				</div>				

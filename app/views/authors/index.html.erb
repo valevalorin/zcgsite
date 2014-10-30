@@ -1,0 +1,18 @@
+<h1>Listing Authors</h1>
+<%= link_to 'New Author', new_author_path %> | <%= link_to 'Back To Admin Panel', admin_path %><br><br>
+<div class="divider"></div>
+<% @authors.each do |author| %>
+  <div class="itemListing">
+    <div class="identifier">
+      <%= author.name %>
+    </div>
+    <div class="actionBlock">
+      <%= link_to 'Show', author %>&nbsp;|&nbsp;
+      <%= link_to 'Edit', edit_author_path(author) %>&nbsp;|&nbsp;
+      <%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <div style="clear:both;"></div>
+  </div><br> 
+<% end %>
+
+

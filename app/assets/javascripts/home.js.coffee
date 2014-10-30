@@ -54,7 +54,6 @@ $(window).bind 'page:change', ->
       easing: "swing"
 
     if $(this).find(".sdsb").length > 0
-      console.log "fired"
       $(this).find(".dateStick").stop().animate
         top: "-80%"
       ,

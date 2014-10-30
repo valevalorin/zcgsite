@@ -3,10 +3,36 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //=========== Index ============//
+.newArticleBlock
+{
+	display: inline-block;
+	float: right;
+	padding-right: 4px;
+	padding-top: 4px;
+}
+.articleScroll
+{
+	display: block;
+	height: 509px;
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow-y: auto;
+}
+.articleListHeader
+{
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #9DEBE9;
+}
 .articleItem
 {
 	display: block;
-	width: 930px;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
 	padding-top: 4px;
 	padding-bottom: 4px;
 	border-bottom: 2px solid #9DEBE9;
@@ -18,8 +44,8 @@
 }
 .authorBlock
 {
-	display: inline-block;
-	margin-right: 4px;
+	display: table-cell;
+	padding-right: 10px;
 }
 .authorImage
 {
@@ -35,7 +61,12 @@
 }
 .titleBlock
 {
-	display:inline-block;
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-left: 1px solid #9DEBE9;
+	border-right: 1px solid #9DEBE9;
 }
 .articleTitle
 {
@@ -47,44 +78,71 @@
 {
 	display: inline-block;
 }
-.descBlock
+.articleBtnWrapper
 {
 	display: table-cell;
+	width: 80px;
+	padding-left: 5px;
 	vertical-align: middle;
-	margin-top: 4px;
-	margin-bottom: 4px;
-}
-.articleDesc
-{
-	display: inline-block;
-	width: 880px;
-	float: left;
+	text-align: left;
 }
 .articleBtn
 {
 	display: inline-block;
 	height: 32px;
 	width: 32px;
-	float: right;	
+}
+.pageBar
+{
+	display: block;
+	height: 40px;
+	padding-top: 3px;
+	background-color: white;
+	color: black;
+	border-top: 1px solid #9DEBE9;
+	border-bottom: 1px solid #9DEBE9;
+}
+.suedit2
+{
+	display: inline-block;
+	height: 32px;
+	width: 32px;
 }
 
 //=========== Show ============//
+.clear
+{
+	clear:both;
+}
+.articleContainer
+{
+	display:block;
+	background-color: rgba(255,255,255,0);
+	color: white;
+	min-height: 510px;
+	text-align: left;
+}
 .articleInfoBlock
 {
 	display: block;
+	padding-top: 20px;
 	width: 900px;
+	margin-left:auto;
+	margin-right:auto;
+	clear:both;
 }
 .barBlock
 {
 	display: inline-block;
-	width: 840px;
-	float: left;
+	width: 760px;
+	float: right;
 }
 .titleBar
 {
 	display: block;
-	width: 840px;
+	width: 760px;
 	font-size: 16pt;
+	padding-bottom: 14px;
 	border-bottom: 2px solid #9DEBE9;
 }
 .dateBar
@@ -95,7 +153,8 @@
 {
 	display: table-cell;
 	vertical-align: middle;
-	float: right;
+	float: left;
+	text-align: center;
 }
 .bigAuthorImage
 {
@@ -106,13 +165,18 @@
 .bigAuthorName
 {
 	display: inline-block;
-	font-size: 13pt;
+	font-size: 11pt;
 }
 .articleText
 {
 	display: block;
-	width: 840px;
+	width: 820px;
+	min-height: 360px;
+	padding: 10px;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: white;
+	color: #444444;
 }
+
 

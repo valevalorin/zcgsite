@@ -1,13 +1,16 @@
-<div class="articleInfoBlock">
-	<div class="barBlock">
-		<div class="titleBar"><%= @article.title %></div><br>
-		<div class="dateBar"><%= @article.strftime("%B %d, %Y") %></div>
+<div class="articleContainer">
+	<div class="articleInfoBlock">
+		<div class="barBlock">
+			<div class="titleBar"><%= @article.title %></div><br>
+			<div class="dateBar"><%= @article.created_at.strftime("%B %d, %Y") %></div>
+		</div>
+		<div class="bigAuthorBlock">
+			<%= image_tag(@author.image, class: "bigAuthorImage") %> <br>
+			<div class="bigAuthorName"><%= @author.name %></div>
+		</div>
+		<div class="clear"></div>
+	</div><br>
+	<div class="articleText">
+		<%= @article.html.html_safe%>
 	</div>
-	<div class="bigAuthorBlock">
-		<%= image_tag(@author.image, class: "bigAuthorImage") %> <br>
-		<div class="bigAuthorName"><%= @author.name %></div>
-	</div>
-</div>
-<div class="articleText">
-	<%= @article.html.html_safe%>
 </div>

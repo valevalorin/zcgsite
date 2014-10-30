@@ -1,6 +1,12 @@
 class ArticlesController < ApplicationController
-	def new
+	before_action :authorize, except: [:index, :show]
 
+	def new
+		@authors = []
+		buffer = Author.all
+		buffer.each do |author|
+			@authors.push([author.name, "#{author.id}"])
+		end
 	end
 
 	def create
@@ -16,7 +22,7 @@ class ArticlesController < ApplicationController
 	  #Process offset, determine range of articles to pull
 	  @offset = nil
 	  @prev = nil
-	  @next = 1
+	  @next = nil
 	  stop = Article.last.id
 	  if params[:offset]
 	  	#Nav
@@ -29,18 +35,19 @@ class ArticlesController < ApplicationController
 	  	stop = stop - (@offset * 15)
 	  end	  
 	  start = stop - 15
+	  @next = nil if start < 1
 
 	  #Pull articles and associate with authors
+	  @authors = []
 	  @articles = Article.where(id: start..stop)
 	  @articles.each do |article|
-	  	author = Author.find_by(id: article.author_id)
-	  	article.author = author
+	  	@authors.push Author.find_by(id: article.author_id)
 	  end
 	end
 
 	def show
   		@article = Article.find(params[:id])
-  		@author = Article.find_by(id: @article.author_id)
+  		@author = Author.find_by(id: @article.author_id)
 	end
 
 	def edit
@@ -56,6 +63,11 @@ class ArticlesController < ApplicationController
 
 	private
 	  def article_params
-	    params.require(:article).permit(:title, :text)
+	    params.require(:article).permit(:title, :html, :title_image, :author_id)
+	  end
+	  def authorize
+		  unless session[:logged_in]
+			redirect_to root_path
+		  end
 	  end
 end

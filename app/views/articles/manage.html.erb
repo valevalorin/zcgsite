@@ -1,0 +1,16 @@
+<h1>Listing Articles</h1>
+<%= link_to 'New Article', new_article_path %> | <%= link_to 'Back To Admin Panel', admin_path %><br><br>
+<div class="divider"></div>
+<% @articles.each do |article| %>
+  <div class="itemListing">
+    <div class="identifier">
+      <%= article.title %> by <%= Author.find_by(article.author_id).name %>
+    </div>
+    <div class="actionBlock">
+      <%= link_to 'Show', article %>&nbsp;|&nbsp;
+      <%= link_to 'Edit', edit_article_path(article) %>&nbsp;|&nbsp;
+      <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <div style="clear:both;"></div>
+  </div><br> 
+<% end %>

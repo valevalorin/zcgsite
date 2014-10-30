@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   # GET /events
   # GET /events.json
@@ -73,5 +74,11 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:title, :day_id, :time, :icon)
+    end
+
+    def authorize
+      unless session[:logged_in]
+      redirect_to root_path
+      end
     end
 end

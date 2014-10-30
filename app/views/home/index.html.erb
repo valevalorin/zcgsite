@@ -1,53 +1,64 @@
+<% if session[:logged_in] %>
+	<div class="adminBlock">
+		<%= link_to(image_tag("wrenches.png", class: "adminImage"), 'admin') %>
+	</div>
+<% end %>
 <div class="newsBlock">
 	<div class="vspacertop"></div>
 	<div class="subStories">
 		<div class="subBlock subBlock1" >
 			<%= link_to(image_tag("facebook.png", class: "staticImage"), "https://www.facebook.com/pages/Zielinskis-the-Card-Game/102946859760100") %>
 		</div>
-		<div class="subBlock subBlock2 newsStory cycle-slideshow" data-cycle-fx="fade" data-cycle-timeout="3000" data-cycle-pause-on-hover="true" data-cycle-slides="> div">
-			<% @events.each do |event| %>
-				<%= image_tag(event.icon, class: "eventImage") %>
-				<div class="dateStick subDateStick">
-					<div class="dateStickBlock sdsb">
-						<%= event.created_at.strftime("%b") %><br/>
-						<%= event.created_at.strftime("%d") %>
+		<div class="noEvents">No Events Within The Next 7 Days</div>
+		<div class="subBlock subBlock2 cycle-slideshow" data-cycle-fx="fade" data-cycle-timeout="3000" data-cycle-pause-on-hover="true" data-cycle-slides="> div">
+			<% @events.each do |event| %>				
+				<div class="eventBlock newsStory">
+					<%= image_tag(event[:icon], class: "eventImage") %>
+					<div class="dateStick subDateStick">
+						<div class="dateStickBlock sdsb">
+							<%= event[:day].strftime("%b") %><br/>
+							<%= event[:day].strftime("%d") %>
+						</div>
+					</div>
+					<div class="preTitle mainPreTitle">
+						<%= event[:title] %><br>
+						<%= event[:time].strftime("%I:%M %p")%>
+					</div>
+					<div id="storyOverlay" class="storyOverlay">		
+						<div class="storyPreview">
+							<h2>
+								<%= event[:title] %>
+							</h2>				
+						</div>
+					</div>
+				</div>	
+			<% end %>			
+		</div>
+	</div><div class="spacer"></div><div class="mainStory newsStory cycle-slideshow" data-cycle-fx="fade" data-cycle-timeout="3000" data-cycle-pause-on-hover="true" data-cycle-slides="> div">
+		<% @articles.each_with_index do |article, index| %>
+			<div class="articleBlock newsStory">
+				<%= image_tag(article.title_image, class: "eventImage") %>
+				<div class="dateStick">
+					<div class="dateStickBlock">
+						<%= article.created_at.strftime("%b") %><br/>
+						<%= article.created_at.strftime("%d") %>
 					</div>
 				</div>
 				<div class="preTitle mainPreTitle">
-					<%= event.title %>
+					<%= article.title %>
 				</div>
 				<div id="storyOverlay" class="storyOverlay">		
 					<div class="storyPreview">
 						<h2>
-							<%= event.title %>
-						</h2>				
+							<%= article.title %>
+						</h2>
+						By <%= @authors[index].name %>
 					</div>
-					<%= link_to(image_tag("whiteforward32.png", class: "storyLink storyLink32"), event) %>
-				</div>
-			<% end %>			
-		</div>
-	</div><div class="spacer"></div><div class="mainStory newsStory cycle-slideshow" data-cycle-fx="fade" data-cycle-timeout="3000" data-cycle-pause-on-hover="true" data-cycle-slides="> div">
-		<% @articles.each do |article| %>
-			<div class="dateStick">
-				<div class="dateStickBlock">
-					<%= article.created_at.strftime("%b") %><br/>
-					<%= article.created_at.strftime("%d") %>
-				</div>
-			</div>
-			<div class="preTitle mainPreTitle">
-				<%= article.title %>
-			</div>
-			<div id="storyOverlay" class="storyOverlay">		
-				<div class="storyPreview">
-					<h2>
-						<%= article.title %>
-					</h2>
-					By <% article.author.name %>
-				</div>
-				<%= link_to(image_tag("whiteforward.png", class: "storyLink"), @mainStory) %>
+					<%= link_to(image_tag("whiteforward.png", class: "storyLink"), article) %>
+				</div>	
 			</div>				
 		<% end %>
 		
 	</div><div class="vspacerbottom"></div>						
 </div>
-
+<%= javascript_include_tag 'jquery.cycle2.min.js' %>

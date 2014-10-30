@@ -16,8 +16,10 @@
  body
  {
  	background-image: url("/assets/texture2.jpg");
+ 	background-repeat: no-repeat;
+    background-attachment: fixed;
  	color: white;
- 	font-family: Jura;
+ 	font-family: Fascinate;
  }
  .logobox
  {
@@ -63,7 +65,8 @@
  	float:left;
  	background-color: rgba(0,0,0,0);
  	width:950px;
- 	color: black;
+ 	min-height: 1000px;
+ 	color: white;
  	text-align: center;
  }
  .navBar
@@ -72,6 +75,7 @@
 	width: 950px;
 	height: 34px;
 	color: white;
+	background-color:white;
  }
  .navButton
  {

@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
   resources :articles
+  resources :authors
   resources :events
   resources :event_days
+  resources :authors 
 
   get 'home/index'
 
   get 'calendar' => 'calendar#index'
+
+  get 'login' => 'session#index'
+  post 'login' => 'session#login'
+  get 'logout' => 'session#logout'
+
+  get 'admin' => 'admin#index'
   
   root 'home#index'
 

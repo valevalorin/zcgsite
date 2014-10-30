@@ -1,5 +1,6 @@
 class EventDaysController < ApplicationController
   before_action :set_event_day, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   # GET /event_days
   # GET /event_days.json
@@ -71,5 +72,11 @@ class EventDaysController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_day_params
       params.require(:event_day).permit(:date, :icon)
+    end
+
+    def authorize
+      unless session[:logged_in]
+      redirect_to root_path
+      end
     end
 end
